@@ -76,7 +76,7 @@ body::-webkit-scrollbar {
   align-items: center;
   justify-content: space-between;
   margin: 0 auto;
-  width: 80%;
+  width: 85%;
 }
 
 .navigation {
@@ -208,7 +208,7 @@ body::-webkit-scrollbar {
     max-width: none;
     flex-direction: row;
     justify-content: space-between;
-    width: 80%;
+    width: 85%;
   }
   .introduction {
     width: 300px;
@@ -217,8 +217,6 @@ body::-webkit-scrollbar {
   .summary {
     width: 400px;
     text-align: start;
-    position: relative;
-    top: 30px;
   }
   .down-arrow {
     bottom: 100px;
@@ -254,7 +252,87 @@ body::-webkit-scrollbar {
   }
 }
 .work {
-  height: 100vh;
+  opacity: 0;
+  animation-duration: 0.5s;
+}
+
+.work__inner {
+  width: 85%;
+  max-width: 420px;
+  height: 100%;
+  margin: 0 auto 100px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 80px;
+  padding-top: 200px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.project__name {
+  font-weight: 600;
+}
+.project__description {
+  font-size: 0.95rem;
+  margin-top: 20px;
+}
+.project__links {
+  font-size: 0.95rem;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.github-link,
+.live-link {
+  color: black;
+  font-weight: 500;
+}
+.github-link:hover,
+.live-link:hover {
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .work__inner {
+    padding-top: 200px;
+    max-width: 710px;
+  }
+  .project {
+    flex-direction: row;
+    align-items: center;
+  }
+  .project__image {
+    max-width: 300px;
+  }
+}
+@media (min-width: 1024px) {
+  .work__inner {
+    max-width: 1000px;
+    gap: 100px;
+  }
+  .project {
+    gap: 70px;
+  }
+  .project__name {
+    font-size: 2rem;
+  }
+  .project__description {
+    font-size: 1.1rem;
+  }
+  .project__links {
+    font-size: 1rem;
+  }
+  .project__image {
+    max-width: 500px;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
