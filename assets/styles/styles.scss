@@ -1,0 +1,170 @@
+// ---------------- VARIABLES ----------------
+
+// ---------------- RESET ----------------
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "DM Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+// ---------------- UTILITIES ----------------
+.hidden {
+  display: none;
+}
+
+// ---------------- HEADER ----------------
+.header {
+  position: fixed;
+  width: 100%;
+  top: 20px;
+  left: 0;
+
+  &-logo {
+    font-size: 3rem;
+    font-weight: 500;
+    z-index: 1;
+  }
+
+  &-icon {
+    z-index: 1;
+    font-size: 1.4rem;
+  }
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+.navigation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 90px;
+  }
+
+  &__anchor {
+    font-size: 1.2rem;
+    color: black;
+  }
+}
+
+@media (min-width: 640px) {
+  .header-logo {
+    z-index: 0;
+  }
+
+  .navigation {
+    width: 50%;
+    max-width: 300px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.137);
+  }
+
+  .navigation__list {
+    gap: 50px;
+  }
+
+  .navigation__anchor {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header {
+    animation: slideInFromUp 1s ease-in-out forwards;
+    opacity: 0;
+  }
+
+  @keyframes slideInFromUp {
+    from {
+      transform: translateY(-10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  .header-open-icon {
+    display: none;
+  }
+
+  .header__inner {
+    max-width: none;
+  }
+
+  .navigation {
+    position: relative;
+    top: auto;
+    left: auto;
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transform: none;
+    transition-duration: 0s;
+    transition-timing-function: ease;
+
+    &__list {
+      flex-direction: row;
+      gap: 40px;
+    }
+
+    &__anchor {
+      font-size: 1rem;
+      color: black;
+
+      &:hover {
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+@media (min-width: 1280px) {
+  .header {
+    top: 40px;
+
+    &__inner {
+      max-width: 1100px;
+    }
+  }
+}
+
+// ---------------- HERO SECTION ----------------
+// ---------------- ABOUT SECTION ----------------
+// ---------------- PROJECTS SECTION ----------------
+// ---------------- CONTACT SECTION ----------------
+// ---------------- FOOTER ----------------
