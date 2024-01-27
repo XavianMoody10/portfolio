@@ -70,16 +70,18 @@ function heroSectionTransition() {
   });
 }
 
-function workSectionTransition() {
-  const currentSection = document.querySelector(".work");
-
+function sectionTransition(currentSection) {
   window.addEventListener("scroll", () => {
-    let options = { threshold: 0.3 };
+    let options = { threshold: 0.1 };
 
     function callback(entries) {
       [...entries].forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("drop-down-enter");
+          entry.target.classList.remove("drop-down-exit");
+        } else {
+          entry.target.classList.remove("drop-down-enter");
+          entry.target.classList.add("drop-down-exit");
         }
       });
     }
@@ -91,5 +93,6 @@ function workSectionTransition() {
 }
 
 heroSectionTransition();
-workSectionTransition();
+sectionTransition(document.querySelector(".work"));
+sectionTransition(document.querySelector(".about"));
 toggleMobileMenu();
