@@ -18,81 +18,46 @@ function toggleMobileMenu() {
   });
 }
 
-function heroSectionTransition() {
+function heroSection(params) {
+  const hero = document.querySelector(".hero");
+  const work = document.querySelector(".work");
   const arrow = document.querySelector(".down-arrow");
-  const nextSection = document.querySelector(".work");
-  const currentSection = document.querySelector(".hero");
-  const introduction = document.querySelector(".introduction");
-  const summary = document.querySelector(".summary");
+
+  arrow.addEventListener("click", () => {
+    hero.classList.remove("drop-down-enter");
+    hero.classList.add("drop-down-exit");
+
+    work.scrollIntoView();
+  });
+}
+
+function sectionsTransition() {
+  const sections = document.querySelectorAll("section");
 
   window.addEventListener("scroll", () => {
     let options = { threshold: 0.3 };
 
-    function callback(entries) {
-      [...entries].forEach((entry) => {
-        if (entry.isIntersecting) {
-          introduction.style.animationDelay = "0.5s";
-          introduction.classList.add("drop-down-enter");
-          introduction.classList.remove("drop-down-exit");
-
-          summary.style.animationDelay = "0.5s";
-          summary.classList.add("drop-down-enter");
-          summary.classList.remove("drop-down-exit");
-
-          arrow.style.animationDelay = "0.5s";
-          arrow.classList.add("drop-down-enter");
-          arrow.classList.remove("drop-down-exit");
-        }
-      });
-    }
-
-    const observer = new IntersectionObserver(callback, options);
-
-    observer.observe(currentSection);
-  });
-
-  arrow.addEventListener("click", () => {
-    introduction.style.animationDelay = "0s";
-    introduction.classList.remove("drop-down-enter");
-    introduction.classList.add("drop-down-exit");
-
-    summary.style.animationDelay = "0s";
-    summary.classList.remove("drop-down-enter");
-    summary.classList.add("drop-down-exit");
-
-    arrow.style.animationDelay = "0.5s";
-    arrow.classList.remove("drop-down-enter");
-    arrow.classList.add("drop-down-exit");
-
-    setTimeout(() => {
-      nextSection.scrollIntoView();
-    }, 1500);
-  });
-}
-
-function sectionTransition(currentSection) {
-  window.addEventListener("scroll", () => {
-    let options = { threshold: 0.1 };
-
-    function callback(entries) {
+    function callback(entries, observer) {
       [...entries].forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("drop-down-enter");
           entry.target.classList.remove("drop-down-exit");
-        } else {
+        } else if (entry.intersectionRatio === 0) {
           entry.target.classList.remove("drop-down-enter");
           entry.target.classList.add("drop-down-exit");
         }
       });
+      observer.disconnect();
     }
 
     const observer = new IntersectionObserver(callback, options);
 
-    observer.observe(currentSection);
+    sections.forEach((section) => {
+      observer.observe(section);
+    });
   });
 }
 
-heroSectionTransition();
-sectionTransition(document.querySelector(".work"));
-sectionTransition(document.querySelector(".about"));
 toggleMobileMenu();
+heroSection();
+sectionsTransition();

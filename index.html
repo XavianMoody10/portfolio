@@ -45,38 +45,50 @@
     </header>
 
     <main>
-      <section class="hero" id="hero">
+      <section class="hero drop-down-enter" id="hero">
         <div class="hero__inner">
-          <h1 class="introduction drop-down-enter">
+          <h1 class="introduction">
             Hello, Im <br />
             Xavian Moody.
           </h1>
 
-          <p class="summary drop-down-enter">
+          <p class="summary">
             A senior-year design student who trying to specialize in 3D modeling
             & texturing.
           </p>
 
-          <div class="down-arrow drop-down-enter">
+          <a href="#work" class="down-arrow">
             <i class="fa-solid fa-arrow-down"></i>
-          </div>
+          </a>
         </div>
       </section>
 
       <!-- WORK SECTION -->
-      <section class="work" id="work">
+      <section class="work drop-down-exit" id="work">
         <div class="work__inner">
           <div class="project">
             <div class="project__info">
-              <p class="project__name">01 / PROJECT NAME</p>
+              <p class="project__name">01 / Furnishop</p>
               <p class="project__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, quibusdam!
+                Furnishop is a fully responsive landing page built using HTML,
+                CSS (SCSS), and Javascript
               </p>
 
               <div class="project__links">
-                <a href="##" class="github-link">View Source Code</a>
-                <a href="##" class="live-link">View Live Version</a>
+                <a
+                  href="https://github.com/XavianMoody10/furnishop"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="github-link"
+                  >View Source Code</a
+                >
+                <a
+                  href="https://furnishop-xavian-moody.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="live-link"
+                  >View Live Version</a
+                >
               </div>
             </div>
 
@@ -90,15 +102,26 @@
 
           <div class="project">
             <div class="project__info">
-              <p class="project__name">02 / PROJECT NAME</p>
+              <p class="project__name">02 / KOIN</p>
               <p class="project__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, quibusdam!
+                Responsive Landing page (HTML, CSS, and Javascript)
               </p>
 
               <div class="project__links">
-                <a href="##" class="github-link">View Source Code</a>
-                <a href="##" class="live-link">View Live Version</a>
+                <a
+                  href="https://github.com/XavianMoody10/koin"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="github-link"
+                  >View Source Code</a
+                >
+                <a
+                  href="https://koin-xavian-moody.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="live-link"
+                  >View Live Version</a
+                >
               </div>
             </div>
 
@@ -112,15 +135,27 @@
 
           <div class="project">
             <div class="project__info">
-              <p class="project__name">03 / PROJECT NAME</p>
+              <p class="project__name">03 / Ninjamail</p>
               <p class="project__description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Voluptate, quibusdam!
+                NinjaMail is a fully responsive landing page built using HTML
+                and CSS
               </p>
 
               <div class="project__links">
-                <a href="##" class="github-link">View Source Code</a>
-                <a href="##" class="live-link">View Live Version</a>
+                <a
+                  href="https://github.com/XavianMoody10/ninjamail"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="github-link"
+                  >View Source Code</a
+                >
+                <a
+                  href="https://ninjamail-xavian-moody.netlify.app/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  class="live-link"
+                  >View Live Version</a
+                >
               </div>
             </div>
 
@@ -134,7 +169,7 @@
         </div>
       </section>
 
-      <section class="about" id="about">
+      <section class="about drop-down-exit" id="about">
         <div class="about__inner">
           <div class="about-text">
             <h2 class="about-text__subheading">
@@ -168,8 +203,45 @@
           />
         </div>
       </section>
-    </main>
 
-    <footer class="footer"></footer>
+      <section id="contact" class="contact drop-down-exit">
+        <div class="contact__inner">
+          <h2 class="contact-subheading">
+            I am thrilled to answer to your next project
+          </h2>
+
+          <a
+            href="mailto:xavianmoody1025@gmail.com"
+            target="_blank"
+            rel="noreferrer noopener"
+            class="contact-email"
+            >XavianMoody1025@gmail.com</a
+          >
+
+          <ul class="contact-socials">
+            <li class="contact-socials__item">
+              <a
+                href="https://github.com/XavianMoody10"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="contact-socials__anchor"
+              >
+                Github</a
+              >
+            </li>
+            <li class="contact-socials__item">
+              <a
+                href="https://www.linkedin.com/in/xavian-moody-65bb77206/"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="contact-socials__anchor"
+              >
+                Linkedin</a
+              >
+            </li>
+          </ul>
+        </div>
+      </section>
+    </main>
   </body>
 </html>

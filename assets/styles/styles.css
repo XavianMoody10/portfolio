@@ -26,12 +26,14 @@ body::-webkit-scrollbar {
 
 .drop-down-enter {
   opacity: 0;
-  animation: slideInFromUp ease-in-out forwards;
+  transform: translateY(-20px);
+  animation: slideInFromUp 0.5s ease-in-out forwards;
 }
 
 .drop-down-exit {
   opacity: 1;
-  animation: slideOutFromDown ease-in-out forwards;
+  transform: translateY(0);
+  animation: slideOutFromDown 0.3s 0.5s ease-in-out forwards;
 }
 
 @keyframes slideInFromUp {
@@ -202,6 +204,9 @@ body::-webkit-scrollbar {
   transform: scale(1.2);
   cursor: pointer;
 }
+.down-arrow:active {
+  color: black;
+}
 
 @media (min-width: 768px) {
   .hero__inner {
@@ -253,7 +258,6 @@ body::-webkit-scrollbar {
 }
 .work {
   opacity: 0;
-  animation-duration: 0.5s;
 }
 
 .work__inner {
@@ -337,8 +341,6 @@ body::-webkit-scrollbar {
 .about {
   display: flex;
   align-items: center;
-  animation-delay: 0.5s;
-  animation-duration: 0.5s;
 }
 .about__inner {
   width: 85%;
@@ -408,6 +410,41 @@ body::-webkit-scrollbar {
   .about-image {
     max-width: 350px;
   }
+}
+.contact {
+  height: 100vh;
+}
+.contact__inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+.contact-subheading {
+  text-align: center;
+}
+.contact-email {
+  color: black;
+  text-decoration: underline;
+}
+.contact-email:hover {
+  text-decoration: underline;
+  font-weight: 700;
+}
+.contact-socials {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+.contact-socials__anchor {
+  color: black;
+  text-decoration: underline;
+}
+.contact-socials__anchor:hover {
+  text-decoration: underline;
+  font-weight: 700;
 }
 
 /*# sourceMappingURL=styles.css.map */
