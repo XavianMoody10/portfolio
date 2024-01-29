@@ -18,7 +18,7 @@ function toggleMobileMenu() {
   });
 }
 
-function heroSection(params) {
+function heroSection() {
   const hero = document.querySelector(".hero");
   const work = document.querySelector(".work");
   const arrow = document.querySelector(".down-arrow");
