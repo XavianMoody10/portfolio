@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+body,
+html {
+  scroll-behavior: smooth;
+}
+
 a {
   text-decoration: none;
 }
@@ -58,6 +63,37 @@ li {
     opacity: 1;
   }
 }
+@keyframes el-enter-up {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes el-enter-right {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.subheading {
+  font-family: "Kulim Park", sans-serif;
+  font-weight: bold;
+  font-size: 2.7rem;
+}
+
+.headline {
+  font-family: "Jura", sans-serif;
+  font-size: 1rem;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -70,6 +106,7 @@ li {
   max-width: 1080px;
   padding: 20px;
   z-index: 1;
+  background-color: white;
 }
 
 .header-logo__text {
@@ -201,16 +238,6 @@ li {
   animation: el-enter-up 1s ease-in-out 1s forwards;
 }
 
-@keyframes el-enter-up {
-  0% {
-    transform: translateY(-10px);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
 .hero-socials {
   position: absolute;
   bottom: 10px;
@@ -244,15 +271,77 @@ li {
     max-width: 450px;
     animation: el-enter-right 1s ease-in-out 1s forwards;
   }
-  @keyframes el-enter-right {
-    0% {
-      transform: translateX(-10px);
-      opacity: 0;
-    }
-    100% {
-      transform: translateX(0);
-      opacity: 1;
-    }
+}
+.about-me {
+  width: 90%;
+  margin: 80px auto 0 auto;
+}
+
+.about-text {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-me-flex {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  max-width: 690px;
+  margin: 50px auto 0 auto;
+}
+.about-me-flex__text {
+  font-family: "Kulim Park", sans-serif;
+  line-height: 2rem;
+  text-align: center;
+}
+
+.about-me-flex__image {
+  max-width: 350px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 40px;
+}
+.skills__logo {
+  max-width: 100px;
+}
+
+@media (min-width: 1200px) {
+  .about-me {
+    max-width: 1080px;
+  }
+  .about-text {
+    text-align: start;
+  }
+  .about-me-flex {
+    flex-direction: row;
+    max-width: none;
+  }
+  .about-me-flex__text {
+    text-align: start;
+    max-width: 500px;
+    font-size: 1.1rem;
+    line-height: 2.5rem;
+  }
+  .about-me-flex__image {
+    max-width: 480px;
+  }
+  .skills {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    max-width: 1000px;
+  }
+  .skills__logo {
+    max-width: 110px;
   }
 }
 
