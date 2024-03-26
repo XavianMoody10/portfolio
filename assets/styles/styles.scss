@@ -55,6 +55,10 @@ li {
   }
 }
 
+// .anchor--hover:hover {
+//   border-bottom: 2px solid black;
+// }
+
 @keyframes open-anchors {
   0% {
     transform: translateX(-30px);
@@ -175,6 +179,10 @@ li {
 
   .navigation--close {
     animation: none;
+  }
+
+  .anchor--hover:hover {
+    border-bottom: 2px solid black;
   }
 }
 

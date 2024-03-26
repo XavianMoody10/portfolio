@@ -155,6 +155,9 @@ li {
   .navigation--close {
     animation: none;
   }
+  .anchor--hover:hover {
+    border-bottom: 2px solid black;
+  }
 }
 .hero {
   width: 90%;
