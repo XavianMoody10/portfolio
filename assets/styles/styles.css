@@ -4,4 +4,156 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.navigation--open {
+  animation: open-navigation 0.5s ease-in-out forwards;
+}
+
+.navigation--close {
+  animation: close-navigation 0.5s ease-in-out forwards;
+}
+
+.anchor--open {
+  animation: open-anchors 0.5s ease-in-out forwards;
+}
+
+@keyframes open-navigation {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes close-navigation {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+@keyframes open-anchors {
+  0% {
+    transform: translateX(-30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  z-index: 1;
+}
+
+.header-logo__text {
+  font-family: "Kulim Park", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.header-open-icon,
+.header-close-icon {
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.navigation {
+  position: fixed;
+  top: 0px;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgb(238, 238, 238);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.navigation__list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.navigation__item {
+  transform: translateX(-30px);
+  opacity: 0;
+}
+.navigation__anchor {
+  font-family: "Kulim Park", sans-serif;
+  font-size: 1.2rem;
+  color: black;
+}
+
+@media (min-width: 1200px) {
+  .header {
+    width: 90%;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    max-width: 1080px;
+  }
+  .header-logo__text {
+    font-size: 2.7rem;
+  }
+  .navigation {
+    position: static;
+    top: auto;
+    left: auto;
+    height: auto;
+    width: auto;
+    background-color: transparent;
+    display: inline-block;
+    align-items: normal;
+    justify-content: center;
+    transform: translateX(0);
+    opacity: 1;
+  }
+  .navigation__list {
+    flex-direction: row;
+  }
+  .navigation__item {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .navigation__anchor {
+    animation: none;
+    font-size: 1rem;
+  }
+  .header-open-icon,
+  .header-close-icon {
+    display: none;
+  }
+  .navigation--open {
+    animation: none;
+  }
+  .navigation--close {
+    animation: none;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
