@@ -72,6 +72,12 @@ li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+  max-width: 1080px;
   padding: 20px;
   z-index: 1;
 }
@@ -91,7 +97,7 @@ li {
 
 .navigation {
   position: fixed;
-  top: 0px;
+  top: 0;
   left: 0;
   height: 100vh;
   width: 100%;
@@ -123,12 +129,7 @@ li {
 
 @media (min-width: 1200px) {
   .header {
-    width: 90%;
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, 0);
-    max-width: 1080px;
+    padding: 20px 0;
   }
 
   .header-logo__text {
@@ -174,5 +175,114 @@ li {
 
   .navigation--close {
     animation: none;
+  }
+}
+
+// ------------- HERO ------------------
+
+.hero {
+  width: 90%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 100vh;
+  position: relative;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 690px;
+  text-align: center;
+  opacity: 0;
+  animation: el-enter-up 1s ease-in-out forwards;
+}
+
+.hero-text__objective {
+  font-family: fonts.$jura;
+  line-height: 1.8rem;
+}
+
+.hero-text__heading {
+  font-family: fonts.$jura;
+  font-size: 2rem;
+
+  & span {
+    font-family: fonts.$kumlin-park;
+    font-weight: bolder;
+  }
+}
+
+.hero-image {
+  max-width: 350px;
+  opacity: 0;
+  animation: el-enter-up 1s ease-in-out 1s forwards;
+}
+
+@keyframes el-enter-up {
+  0% {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.hero-socials {
+  position: absolute;
+  bottom: 10px;
+  left: 0;
+  display: flex;
+  gap: 15px;
+
+  &__icon {
+    font-size: 2rem;
+    color: black;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero {
+    max-width: 1080px;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero-text {
+    text-align: start;
+    animation: el-enter-right 1s ease-in-out forwards;
+
+    &__heading {
+      font-size: 3.2rem;
+    }
+
+    &__objective {
+      max-width: 580px;
+      font-size: 1.1rem;
+    }
+  }
+
+  .hero-image {
+    max-width: 450px;
+    animation: el-enter-right 1s ease-in-out 1s forwards;
+  }
+
+  @keyframes el-enter-right {
+    0% {
+      transform: translateX(-10px);
+      opacity: 0;
+    }
+
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
 }
