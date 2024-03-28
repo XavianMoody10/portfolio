@@ -311,19 +311,9 @@ li {
 // ---------------- ABOUT -------------------
 .about-me {
   width: 90%;
-  margin: 80px auto 0 auto;
+  margin: 0 auto;
+  padding-top: 80px;
 }
-
-// .subheading {
-//   font-family: fonts.$kumlin-park;
-//   font-weight: bold;
-//   font-size: 2.7rem;
-// }
-
-// .headline {
-//   font-family: fonts.$jura;
-//   font-size: 1rem;
-// }
 
 .about-text {
   text-align: center;
@@ -368,6 +358,7 @@ li {
 @media (min-width: 1200px) {
   .about-me {
     max-width: 1080px;
+    padding-top: 100px;
   }
 
   .about-text {
@@ -398,5 +389,95 @@ li {
     &__logo {
       max-width: 110px;
     }
+  }
+}
+
+// ----------------- PROJECTS ---------------------
+
+.my-work {
+  width: 90%;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 80px 0 30px 0;
+}
+
+.my-work-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.projects {
+  margin-top: 80px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.project {
+  border: 1px solid rgb(200, 200, 200);
+  border-radius: 5px;
+  height: 140px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  max-width: 286px;
+  width: 100%;
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition-duration: 0.5s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: 20px;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.689);
+      opacity: 1;
+    }
+  }
+
+  &__name {
+    color: white;
+    font-family: fonts.$kumlin-park;
+    font-size: 1.5rem;
+  }
+
+  &__icons {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__icon {
+    color: white;
+    font-size: 1.4rem;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .project {
+    max-width: 350px;
+    height: 200px;
+  }
+
+  .my-work-text {
+    text-align: start;
+    align-items: flex-start;
   }
 }

@@ -1,4 +1,5 @@
 "use strict";
+import data from "./data.js";
 
 const headerFunctionality = () => {
   const openIcon = document.querySelector(".header-open-icon");
@@ -64,4 +65,37 @@ const headerFunctionality = () => {
   });
 };
 
+function loadProjects() {
+  const projectsContainer = document.querySelector(".projects");
+
+  data.forEach(({ projectName, liveLink, sourceLink }) => {
+    const projectEl = `<div class="project">
+    <div class="project__overlay">
+      <p class="project__name">${projectName}</p>
+      <div class="project__icons">
+        <a class="project__icon" href="${sourceLink}" target="_blank"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+        <a class="project__icon" href="${liveLink}" target="_blank"
+          ><i class="fa-solid fa-laptop"></i
+        ></a>
+      </div>
+    </div>
+  </div>`;
+
+    projectsContainer.insertAdjacentHTML("beforeend", projectEl);
+  });
+
+  function addBackgoundImages() {
+    const projects = document.querySelectorAll(".project");
+
+    projects.forEach((project, index) => {
+      project.style.backgroundImage = `url(assets/images/${data[index].backgroundImage})`;
+    });
+  }
+
+  addBackgoundImages();
+}
+
+loadProjects();
 headerFunctionality();

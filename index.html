@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/16b96c8656.js"
       crossorigin="anonymous"
     ></script>
-    <script src="assets/scripts/main.js" defer></script>
+    <script type="module" src="assets/scripts/main.js" defer></script>
     <link rel="stylesheet" href="assets/styles/styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +37,9 @@
             >
           </li>
           <li class="navigation__item">
-            <a href="##" class="navigation__anchor anchor--hover">My Work</a>
+            <a href="#my-work" class="navigation__anchor anchor--hover"
+              >My Work</a
+            >
           </li>
           <li class="navigation__item">
             <a href="##" class="navigation__anchor anchor--hover">Contact</a>
@@ -145,7 +147,17 @@
         </div>
       </section>
 
-      <section class="my-work" id="my-work"></section>
+      <section class="my-work" id="my-work">
+        <div class="my-work-text">
+          <h2 class="my-work-text__subheading subheading">My Projects</h2>
+          <p class="my-work-text__headline headline">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          </p>
+        </div>
+
+        <div class="projects"></div>
+      </section>
+
       <section class="contact" id="contact"></section>
     </main>
     <footer class="footer" id="footer"></footer>
