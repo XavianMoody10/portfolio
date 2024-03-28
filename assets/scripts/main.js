@@ -1,7 +1,8 @@
 "use strict";
 import data from "./data.js";
 
-const headerFunctionality = () => {
+// Open and close navigation menu
+const toggleNavigation = () => {
   const openIcon = document.querySelector(".header-open-icon");
   const closeIcon = document.querySelector(".header-close-icon");
   const navigation = document.querySelector(".navigation");
@@ -65,6 +66,7 @@ const headerFunctionality = () => {
   });
 };
 
+// Dynamically add load projects to DOM
 function loadProjects() {
   const projectsContainer = document.querySelector(".projects");
 
@@ -98,4 +100,4 @@ function loadProjects() {
 }
 
 loadProjects();
-headerFunctionality();
+toggleNavigation();

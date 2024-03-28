@@ -154,6 +154,17 @@ li {
 @media (min-width: 1200px) {
   .header {
     padding: 20px 0;
+    animation: el-from-top 1s ease-in-out forwards;
+  }
+  @keyframes el-from-top {
+    0% {
+      opacity: 0;
+      transform: translate(-50%, -10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
   }
   .header-logo__text {
     font-size: 2.7rem;
@@ -343,7 +354,7 @@ li {
     max-width: 1000px;
   }
   .skills__logo {
-    max-width: 110px;
+    max-width: 100px;
   }
 }
 .my-work {
