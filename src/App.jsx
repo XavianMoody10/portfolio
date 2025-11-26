@@ -8,6 +8,8 @@ import express from "./assets/Express.png";
 import node from "./assets/Node.js.png";
 import react from "./assets/React.png";
 import next from "./assets/Next.js.png";
+import location from "./assets/location.png";
+import college from "./assets/college.png";
 
 const App = () => {
   return (
@@ -21,7 +23,7 @@ const App = () => {
       </header>
 
       <main className=" bg-linear-to-br from-[#0a0f29] to-black">
-        <section className=" min-h-screen flex items-center justify-center">
+        <section className=" pt-10 min-h-screen flex items-center justify-center">
           <div className=" bg-white w-[90%] max-w-[700px] space-y-7 p-10 rounded-2xl flex flex-col items-center">
             <p className=" text-2xl font-inter font-medium">Hello, I'm</p>
             <h1 className=" text-6xl font-bold font-saira text-center">
@@ -80,7 +82,49 @@ const App = () => {
           </div>
         </section>
 
-        <section id="about-me" className=" min-h-screen"></section>
+        <section
+          id="about-me"
+          className=" hidden sm:flex min-h-screen items-center justify-center"
+        >
+          <div className=" bg-white w-[90%] max-w-[700px] p-10 rounded-2xl space-y-10">
+            <h2 className=" text-4xl font-bold font-saira border-b-2 border-gray-200 py-3 mb-4">
+              About Me
+            </h2>
+
+            <div className=" flex flex-col gap-3">
+              <p className=" text-lg text-gray-500 font-inter font-medium min-[800px]:inline">
+                I’m a passionate software developer who genuinely loves coding
+                and the challenge it brings. Complex problems are my favorite
+                part of the process—I enjoy breaking them down, understanding
+                how they work, and building clean, effective solutions through
+                code. Every project is an opportunity to think deeper, improve
+                my logic, and push my skills further.
+              </p>
+              <p className=" text-lg text-gray-500 font-inter font-medium min-[800px]:inline">
+                I was born and raised in Fort Lauderdale, Florida, where my
+                curiosity for technology started at a young age. What began as
+                simple experimentation eventually grew into a strong interest in
+                programming and how software shapes the world around us. That
+                curiosity has stayed with me, driving me to constantly explore
+                new concepts and sharpen my technical thinking.
+              </p>
+              <p className=" text-lg text-gray-500 font-inter font-medium min-[800px]:inline">
+                I earned my Associate of Science degree in Software Development
+                from Broward College, where I strengthened my foundation in
+                programming, databases, and application development. Today, I’m
+                focused on growing as a developer by taking on challenging
+                projects and continuously learning. My goal is to write
+                reliable, efficient code and build solutions that truly make a
+                difference.
+              </p>
+            </div>
+
+            <div className=" flex items-center justify-between gap-4">
+              <img src={location} width={100} />
+              <img src={college} width={180} />
+            </div>
+          </div>
+        </section>
       </main>
     </>
   );
