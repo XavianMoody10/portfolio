@@ -10,11 +10,16 @@ import react from "./assets/React.png";
 import next from "./assets/Next.js.png";
 import location from "./assets/location.png";
 import college from "./assets/college.png";
+import { RiComputerLine as LiveIcon } from "react-icons/ri";
+import { FaGithub as GithubIcon } from "react-icons/fa";
+import vivadecor from "./assets/vivadecor.png";
+import newsApplication from "./assets/news-application.png";
+import filmReviewApplication from "./assets/film-review-application.png";
 
 const App = () => {
   return (
     <>
-      <header className=" fixed top-0 w-full p-3">
+      <header className=" sticky top-0 w-full">
         <div>
           <div className=" absolute right-3">
             <Hamburger color="white" size={25} />
@@ -22,7 +27,7 @@ const App = () => {
         </div>
       </header>
 
-      <main className=" bg-linear-to-br from-[#0a0f29] to-black">
+      <main className=" bg-linear-to-br from-[#0a0f29] to-black flex flex-col gap-20">
         <section className=" pt-10 min-h-screen flex items-center justify-center">
           <div className=" bg-white w-[90%] max-w-[700px] space-y-7 p-10 rounded-2xl flex flex-col items-center">
             <p className=" text-2xl font-inter font-medium">Hello, I'm</p>
@@ -63,7 +68,7 @@ const App = () => {
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="#projects"
                     className=" block border border-gray-300 font-medium px-3 py-2 rounded-sm duration-150 hover:bg-black hover:text-white"
                   >
                     Projects
@@ -84,9 +89,9 @@ const App = () => {
 
         <section
           id="about-me"
-          className=" hidden sm:flex min-h-screen items-center justify-center"
+          className="flex min-h-screen items-center justify-center"
         >
-          <div className=" bg-white w-[90%] max-w-[700px] p-10 rounded-2xl space-y-10">
+          <div className=" bg-white w-[90%] max-w-[900px] p-10 rounded-2xl space-y-10">
             <h2 className=" text-4xl font-bold font-saira border-b-2 border-gray-200 py-3 mb-4">
               About Me
             </h2>
@@ -119,9 +124,115 @@ const App = () => {
               </p>
             </div>
 
-            <div className=" flex items-center justify-between gap-4">
+            <div className=" flex flex-wrap justify-center items-center gap-4">
               <img src={location} width={100} />
               <img src={college} width={180} />
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="projects"
+          className=" min-h-screen flex flex-col items-center justify-center gap-10"
+        >
+          <h2 className=" text-5xl text-white font-saira">Projects</h2>
+          <div className=" w-[90%] max-w-[1500px] mx-auto grid grid-cols-1 justify-items-center gap-10 min-[800px]:grid-cols-2 min-[800px]:gap-5 2xl:grid-cols-3">
+            <div className=" bg-white w-full p-10 rounded-2xl space-y-5">
+              <h3 className=" text-2xl font-saira">Film Review Application</h3>
+              <img
+                src={filmReviewApplication}
+                alt=""
+                className=" min-h-[200px] w-full border border-gray-200 object-cover"
+              />
+              <p className=" font-inter text-gray-500 min-h-[50px]">
+                A full-stack MERN application that allows users to rate and
+                leave reviews for movies and TV shows.
+              </p>
+              <div className=" flex justify-between">
+                <div className=" flex flex-wrap gap-3 rounded-sm">
+                  <img src={mongodb} width={30} />
+                  <img src={express} width={30} />
+                  <img src={node} width={30} />
+                  <img src={react} width={30} />
+                </div>
+
+                <div className=" flex gap-3">
+                  <a
+                    href="https://film-review-application.vercel.app/"
+                    target="_blank"
+                  >
+                    <LiveIcon size={27} />
+                  </a>
+                  <a
+                    href="https://github.com/XavianMoody10/Film-Review-Application"
+                    target="_blank"
+                  >
+                    <GithubIcon size={25} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className=" bg-white w-full p-10 rounded-2xl space-y-5">
+              <h3 className=" text-2xl font-saira">VivaDecor</h3>
+              <img
+                src={vivadecor}
+                alt="vivadecor"
+                className=" min-h-[200px] w-full border border-gray-200 object-cover"
+              />
+              <p className=" font-inter text-gray-500 min-h-[50px]">
+                A single-page website for an interior design company.
+              </p>
+              <div className=" flex justify-between">
+                <div className=" flex flex-wrap gap-3 rounded-sm">
+                  <img src={react} width={30} />
+                </div>
+
+                <div className=" flex gap-3">
+                  <a href="https://vivadecor-phi.vercel.app/" target="_blank">
+                    <LiveIcon size={27} />
+                  </a>
+                  <a
+                    href="https://github.com/XavianMoody10/vivadecor"
+                    target="_blank"
+                  >
+                    <GithubIcon size={25} />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className=" bg-white w-full p-10 rounded-2xl space-y-5">
+              <h3 className=" text-2xl font-saira">News Application</h3>
+              <img
+                src={newsApplication}
+                alt="news application"
+                className=" min-h-[200px] w-full border border-gray-200 object-cover"
+              />
+              <p className=" font-inter text-gray-500 min-h-[50px]">
+                A full-stack news application made with NextJS
+              </p>
+
+              <div className=" flex justify-between">
+                <div className=" flex flex-wrap gap-3 rounded-sm">
+                  <img src={next} width={30} />
+                </div>
+
+                <div className=" flex gap-3">
+                  <a
+                    href="https://news-application-liart.vercel.app/"
+                    target="_blank"
+                  >
+                    <LiveIcon size={27} />
+                  </a>
+                  <a
+                    href="https://github.com/XavianMoody10/news-application"
+                    target="_blank"
+                  >
+                    <GithubIcon size={25} />
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
