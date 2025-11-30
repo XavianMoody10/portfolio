@@ -15,14 +15,67 @@ import { FaGithub as GithubIcon } from "react-icons/fa";
 import vivadecor from "./assets/vivadecor.png";
 import newsApplication from "./assets/news-application.png";
 import filmReviewApplication from "./assets/film-review-application.png";
+import { IoClose as CloseIcon } from "react-icons/io5";
+import { useState } from "react";
+import { motion } from "motion/react";
 
 const App = () => {
+  const [isOpen, setOpen] = useState(false);
+
   return (
     <>
+      <motion.aside
+        initial={{ x: "-100%" }}
+        animate={{ x: isOpen ? 0 : "-100%" }}
+        transition={{ stiffness: 0 }}
+        className=" flex items-center justify-center fixed left-0 top-0 border bg-linear-to-br from-[#0a0f29] to-black w-full sm:w-[90%] sm:max-w-[300px] h-screen shadow-2xl z-10"
+      >
+        <CloseIcon
+          className=" absolute top-5 right-5 cursor-pointer"
+          color="white"
+          onClick={() => setOpen(false)}
+          size={30}
+        />
+
+        <nav>
+          <ul className=" flex flex-col items-center gap-10">
+            <li>
+              <a
+                href="#about"
+                className=" text-white text-3xl font-saira font-semibold hover:underline"
+              >
+                About
+              </a>
+            </li>
+            <li>
+              <a
+                href="#projects"
+                className=" text-white text-3xl font-saira font-semibold hover:underline"
+              >
+                Projects
+              </a>
+            </li>
+            <li>
+              <a
+                href="#contact"
+                className=" text-white text-3xl font-saira font-semibold hover:underline"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </motion.aside>
+
       <header className=" sticky top-0 w-full">
         <div>
           <div className=" absolute right-3">
-            <Hamburger color="white" size={25} />
+            <Hamburger
+              color="white"
+              size={25}
+              toggled={isOpen}
+              toggle={setOpen}
+            />
           </div>
         </div>
       </header>
@@ -60,7 +113,7 @@ const App = () => {
               <ul className=" flex flex-wrap gap-3">
                 <li>
                   <a
-                    href="#about-me"
+                    href="#about"
                     className=" block border border-gray-300 font-medium px-3 py-2 rounded-sm duration-150 hover:bg-black hover:text-white"
                   >
                     About Me
@@ -76,7 +129,7 @@ const App = () => {
                 </li>
                 <li>
                   <a
-                    href=""
+                    href="#contact"
                     className=" block border border-gray-300 font-medium px-3 py-2 rounded-sm duration-150 hover:bg-black hover:text-white"
                   >
                     Contact
@@ -88,7 +141,7 @@ const App = () => {
         </section>
 
         <section
-          id="about-me"
+          id="about"
           className="flex min-h-screen items-center justify-center"
         >
           <div className=" bg-white w-[90%] max-w-[900px] p-10 rounded-2xl space-y-10">
@@ -144,7 +197,7 @@ const App = () => {
                 alt=""
                 className=" min-h-[200px] w-full border border-gray-200 object-cover"
               />
-              <p className=" font-inter text-gray-500 min-h-[50px]">
+              <p className=" font-inter text-gray-500 min-h-[50px] overflow-auto">
                 A full-stack MERN application that allows users to rate and
                 leave reviews for movies and TV shows.
               </p>
@@ -234,6 +287,35 @@ const App = () => {
                 </div>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className=" min-h-screen flex flex-col items-center justify-center gap-10"
+        >
+          <div className=" text-center space-y-5">
+            <h2 className=" text-5xl text-white font-bold">Contact</h2>
+            <ul className=" space-y-3">
+              <li className=" text-2xl text-white">
+                Email:{" "}
+                <a
+                  href="mailto:XavianMoody1025@gmail.com"
+                  type="email"
+                  target="_blank"
+                  className=" underline"
+                >
+                  XavianMoody1025@gmail.com
+                </a>
+              </li>
+
+              <li className=" text-2xl text-white">
+                Phone:{" "}
+                <a href="tel:+17543679271" className=" underline">
+                  +1 754-367-9271
+                </a>
+              </li>
+            </ul>
           </div>
         </section>
       </main>
