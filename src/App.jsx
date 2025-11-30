@@ -2,7 +2,7 @@ import { Cross as Hamburger } from "hamburger-react";
 import html from "./assets/HTML5.png";
 import css from "./assets/CSS3.png";
 import sass from "./assets/Sass.png";
-import javascript from "./assets/JvaScript.png";
+import javascript from "./assets/JavaScript.png";
 import mongodb from "./assets/MongoDB.png";
 import express from "./assets/Express.png";
 import node from "./assets/Node.js.png";
